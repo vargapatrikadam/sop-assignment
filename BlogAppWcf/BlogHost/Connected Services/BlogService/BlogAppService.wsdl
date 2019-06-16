@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BlogAppService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55778/BlogAppWcf.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55778/BlogAppWcf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BlogAppWcf" />
+      <xsd:import schemaLocation="http://localhost:55778/BlogAppWcf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBlogAppService_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_UserLogin_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q1:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_UserLogin_NotCorrectPasswordFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q2:NotCorrectPasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_UserLogout_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogout" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_UserLogout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_UserLogout_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q3:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_AddPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPost" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_AddPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_AddPost_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q4:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_ModifyPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPost" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_ModifyPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_ModifyPost_PostNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q5:PostNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_ModifyPost_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q6:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_DeletePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePost" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_DeletePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_DeletePost_PostNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q7:PostNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_DeletePost_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q8:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_RegisterUser_UserAlreadyExistsFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q9:UserAlreadyExistsFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_RegisterUser_PasswordsNotEqualFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q10:PasswordsNotEqualFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetAllPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPosts" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetAllPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetAllPosts_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q11:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetUserPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPosts" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetUserPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetUserPosts_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q12:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetPostBody_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostBody" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetPostBody_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostBodyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetPostBody_PostNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q13:PostNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IBlogAppService_GetPostBody_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/BlogAppWcf" name="detail" element="q14:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:portType name="IBlogAppService">
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/UserLogin" message="tns:IBlogAppService_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/UserLoginResponse" message="tns:IBlogAppService_UserLogin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/UserLoginUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_UserLogin_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/UserLoginNotCorrectPasswordFaultFault" name="NotCorrectPasswordFaultFault" message="tns:IBlogAppService_UserLogin_NotCorrectPasswordFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/UserLogout" message="tns:IBlogAppService_UserLogout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/UserLogoutResponse" message="tns:IBlogAppService_UserLogout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/UserLogoutUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_UserLogout_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/AddPost" message="tns:IBlogAppService_AddPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/AddPostResponse" message="tns:IBlogAppService_AddPost_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/AddPostUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_AddPost_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/ModifyPost" message="tns:IBlogAppService_ModifyPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/ModifyPostResponse" message="tns:IBlogAppService_ModifyPost_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/ModifyPostPostNotFoundFaultFault" name="PostNotFoundFaultFault" message="tns:IBlogAppService_ModifyPost_PostNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/ModifyPostUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_ModifyPost_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/DeletePost" message="tns:IBlogAppService_DeletePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/DeletePostResponse" message="tns:IBlogAppService_DeletePost_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/DeletePostPostNotFoundFaultFault" name="PostNotFoundFaultFault" message="tns:IBlogAppService_DeletePost_PostNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/DeletePostUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_DeletePost_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/RegisterUser" message="tns:IBlogAppService_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/RegisterUserResponse" message="tns:IBlogAppService_RegisterUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/RegisterUserUserAlreadyExistsFaultFault" name="UserAlreadyExistsFaultFault" message="tns:IBlogAppService_RegisterUser_UserAlreadyExistsFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/RegisterUserPasswordsNotEqualFaultFault" name="PasswordsNotEqualFaultFault" message="tns:IBlogAppService_RegisterUser_PasswordsNotEqualFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/GetAllPosts" message="tns:IBlogAppService_GetAllPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/GetAllPostsResponse" message="tns:IBlogAppService_GetAllPosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/GetAllPostsUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_GetAllPosts_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/GetUserPosts" message="tns:IBlogAppService_GetUserPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/GetUserPostsResponse" message="tns:IBlogAppService_GetUserPosts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/GetUserPostsUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_GetUserPosts_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostBody">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlogAppService/GetPostBody" message="tns:IBlogAppService_GetPostBody_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlogAppService/GetPostBodyResponse" message="tns:IBlogAppService_GetPostBody_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/GetPostBodyPostNotFoundFaultFault" name="PostNotFoundFaultFault" message="tns:IBlogAppService_GetPostBody_PostNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBlogAppService/GetPostBodyUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:IBlogAppService_GetPostBody_UserNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBlogAppService" type="tns:IBlogAppService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NotCorrectPasswordFaultFault">
+        <soap:fault use="literal" name="NotCorrectPasswordFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogout">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/UserLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddPost">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/AddPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPost">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/ModifyPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PostNotFoundFaultFault">
+        <soap:fault use="literal" name="PostNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/DeletePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PostNotFoundFaultFault">
+        <soap:fault use="literal" name="PostNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserAlreadyExistsFaultFault">
+        <soap:fault use="literal" name="UserAlreadyExistsFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="PasswordsNotEqualFaultFault">
+        <soap:fault use="literal" name="PasswordsNotEqualFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPosts">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/GetAllPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPosts">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/GetUserPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostBody">
+      <soap:operation soapAction="http://tempuri.org/IBlogAppService/GetPostBody" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PostNotFoundFaultFault">
+        <soap:fault use="literal" name="PostNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserNotFoundFaultFault">
+        <soap:fault use="literal" name="UserNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BlogAppService">
+    <wsdl:port name="BasicHttpBinding_IBlogAppService" binding="tns:BasicHttpBinding_IBlogAppService">
+      <soap:address location="http://localhost:55778/BlogAppWcf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

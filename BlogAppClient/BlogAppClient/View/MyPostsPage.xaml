@@ -1,0 +1,40 @@
+﻿<Page x:Class="BlogApp.View.MyPostsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BlogApp.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextElement.FontWeight="Medium"
+      TextElement.FontSize="14"
+      FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MyPostsPage"
+      xmlns:vm="clr-namespace:BlogApp.ViewModel">
+    <Page.DataContext>
+        <vm:MyPostsPageViewModel/>
+    </Page.DataContext>
+    <Grid HorizontalAlignment="Center">
+        <ListView Margin="10" ItemsSource="{Binding MyPosts}" HorizontalAlignment="Center" Name="MyListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <GroupBox Header="{Binding User.UserName}" Width="400">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Poszt törlése" Command="{Binding Path=DataContext.DeletePost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}" FontSize="12"/>
+                                <MenuItem Header="Poszt módosítása" Command="{Binding Path=DataContext.ModifyPost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}" FontSize="12"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Body}" TextWrapping="Wrap" Padding="3" Margin="0 0 0 5"/>
+                            <TextBlock Text="{Binding Created_At}" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignBody1TextBlock}" FontStyle="Italic"/>
+                        </StackPanel>
+                    </GroupBox>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

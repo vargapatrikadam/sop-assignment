@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="416a4082-b00f-4b5f-876a-add23100a2d7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:80/BlogAppWcf.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BlogAppWcf.xsd" MetadataType="Schema" ID="49819cdb-cd78-48d9-bfa9-3ae372366ce1" SourceId="1" SourceUrl="http://localhost/BlogAppWcf.svc?xsd=xsd0" />
+    <MetadataFile FileName="BlogAppWcf1.xsd" MetadataType="Schema" ID="f9c662c4-a30e-4417-bbd0-bf733926c9df" SourceId="1" SourceUrl="http://localhost/BlogAppWcf.svc?xsd=xsd1" />
+    <MetadataFile FileName="BlogAppWcf2.xsd" MetadataType="Schema" ID="18926b29-13bd-4fe6-9e4a-6098286126d0" SourceId="1" SourceUrl="http://localhost/BlogAppWcf.svc?xsd=xsd2" />
+    <MetadataFile FileName="BlogAppService.wsdl" MetadataType="Wsdl" ID="98a1b2be-9777-4241-be47-c704ffff217d" SourceId="1" SourceUrl="http://localhost/BlogAppWcf.svc?wsdl" />
+    <MetadataFile FileName="BlogAppWcf.disco" MetadataType="Disco" ID="c63a0e9f-1dc7-4b46-ae4e-cc137d3d5f4c" SourceId="1" SourceUrl="http://localhost/BlogAppWcf.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
